@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale">
+        <title>sample</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <div id="app">
+            <header>
+                <div class="logo">
+                    <h1>架空のサイト</h1>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <ul>
+                            <li><a href="#profile">About</a></li>
+                            <li><a href="#works">Works</a></li>
+                            <li><a href="#disco">Illust</a></li>
+                            <li><a href="#order">Order</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="sp-menu" @click="showMenu">
+                    <span class="material-icons" id="open" v-if="!isShow">menu</span>
+                    <span class="material-icons" id="close"　v-if="isShow"> close</span>
+                </div>
+            </header>
+
+            <div class="overlay" :class="{'isShow' : isShow}">
+                <nav>
+                    <ul>
+                        <li><a href="#profile">About</a></li>
+                        <li><a href="#works">Works</a></li>
+                        <li><a href="#disco">Illust</a></li>
+                        <li><a href="#order">Order</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+    
+            <section class="profile">
+                <h1 id="profile">About</h1>
+                <div class="container">
+                    <section>
+                        <div class="pic">
+                            <img src="img/prof.png">
+                        </div>
+                        <div class="info">
+                            <h2>名前</h2>
+                            <p>自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介自己紹介</p>
+                            <p>経歴経歴経歴経歴経歴経歴経歴経歴経歴経歴経歴経歴経歴経歴経歴経歴経歴経歴経歴経歴</p>
+                        </div>
+                    </section>
+                </div>
+            </section>
+    
+            <section class="works">
+                <h1 id="works">Works</h1>
+                <my-works></my-works>
+            </section>
+            
+    
+            <section class="disco">
+                <h1 id="disco">Illust</h1>
+                <div class="container2">
+                    <a class="btn1" href="gallary_work.html" target="_blank" rel="noopener noreferrer">
+                        <h2>商業作品</h2>
+                        <p>お仕事で製作したイラスト・デザインはこちら</p>
+                    </a>
+                    <a class="btn2" href="gallary_hobby.html" target="_blank" rel="noopener noreferrer">
+                        <h2>趣味作品</h2>
+                        <p>趣味で製作したイラスト・デザインはこちら（二次創作含む）</p>
+                    </a>
+                </div>
+            </section>
+    
+            <section class="order">
+                <h1 id="order">Order</h1>
+                <p>ご依頼の際は下記表を参考にしてください。</p>
+                <p>※表に記載されている価格は最低価格になります。</p>
+                
+                <my-orders></my-orders>
+            </section>
+    
+            <section class="contact">
+                <h1 id="contact">Contact</h1>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>mail</td>
+                            <td>xxxx[at]gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Twitter</td>
+                            <td><a href="https://about.twitter.com/ja.html" target="_blank" rel="noopener noreferrer">@twitter_id</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+    
+            </section>
+    
+            <footer>
+                <p>(c) いらすとや</p>
+            </footer>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="script/main.js"></script>
+    </body>
+</html>
