@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width",initial-scale="1.0" />
+
+        <link rel="stylesheet" href="./css/gallary.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <title>sample_gallaly2</title>
+    </head>
+    <body>
+        <div id="app">
+            <header>
+                <div class="logo">
+                    <h1>架空のサイト</h1>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Back</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
+            <section class="gallary"> 
+                <h1>趣味作品</h1>
+                <p>趣味で製作したイラスト・デザインを紹介します。（二次創作含む）</p>
+                <div class="wrap">
+                    <image-thumbnail
+                    v-for="(img, i) in images"
+                    :key="i"
+                    :path="img.path"
+                    @clickImage="onSelectImage(img.path)"></image-thumbnail>
+                    <transirion name="fade">
+                        <modal :is-shown="isShown" :image-path="selectedImage" @close="closeModal" />
+                    </transirion>
+                </div>
+            </section>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="./script/gallaly.js"></script>
+    </body>
+</html>
